@@ -30,12 +30,13 @@ export function Form() {
             }; 
                 fetch('https://76y592jsbi.execute-api.us-west-1.amazonaws.com/dev', requestOptions)
                     .then(response => response.json())
+                    .then(document.getElementById('content').innerHTML = "Your email was sent")
     }        
 
         return (
             <div style={myStyle}>
                 <h1>Email Form for MK Decision</h1>
-                <form method="POST"
+                <form id="content" method="POST"
                     onSubmit={handleSubmit}>
                     <TextField 
                         required 
